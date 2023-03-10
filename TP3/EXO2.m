@@ -1,0 +1,16 @@
+close all;clear variables;
+I=imread('iso100_ex2.jpg');
+I=im2double(I);
+I=rgb2gray(I);
+Ire=imresize(I,0.25);
+% imgreFFT=fft2(Ire);
+% imgreFFT=fftshift(imgreFFT);
+% figure(1);
+% imshow(log(abs(imgreFFT)),[]);
+Ibil=imresize(Ire,4,'bilinear');
+Ibicu=imresize(Ire,4,'bicubic');
+figure(1);
+subplot(221);imshow(I);
+subplot(222);imshow(Ire,[]);
+subplot(223);imshow(Ibil,[]);
+subplot(224);imshow(Ibicu,[]);
